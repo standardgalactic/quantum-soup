@@ -1,0 +1,488 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amsthm,amssymb,mathtools}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{hyperref}
+
+\geometry{margin=1in}
+\onehalfspacing
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\title{\textbf{The Clinical–Interactional Field Guide}\\
+\large Noiselords, Yarncrawlers, and the Regulation of Social Meaning}
+\author{Flyxion}
+\date{2025}
+
+\begin{document}
+\maketitle
+
+\section{Orientation and Clinical Intent}
+
+This document formalizes a class of interactional failures that arise not from deficits in cognition, personality, or intent, but from breakdowns in the regulation of shared semantic processes. The framework presented here treats conversational meaning as a jointly managed dynamical system subject to finite capacity constraints, termination conditions, and invariance criteria.
+
+The objective is not classification of individuals but diagnosis of interactional modes. The central distinction is between lawful semantic traversal, termed \emph{Yarncrawling}, and runaway semantic elaboration, termed the \emph{Noiselord} regime. These terms designate process dynamics rather than traits.
+
+\section{Formal Framework of Social Bandwidth}
+
+Conversation is treated as a cooperative allocation of finite processing capacity. Let $G$ denote a conversational group consisting of $n$ participants. Let $B(t)$ denote the residual social bandwidth available to the group at time $t$.
+
+\begin{definition}[Social Bandwidth]
+Let $B_0 > 0$ be the initial semantic processing capacity of the group. Let $c_i(t)$ denote the instantaneous semantic load imposed by participant $i$ at time $t$. The social bandwidth is defined as
+\[
+B(t) = B_0 - \sum_{i=1}^{n} \int_0^t c_i(\tau)\, d\tau.
+\]
+\end{definition}
+
+The semantic load function $c_i(t)$ subsumes multiple observable factors, including speaking duration, conceptual complexity, emotional intensity, and inferential demand imposed on other participants. The precise decomposition of $c_i(t)$ is context-dependent but need not be specified for the present analysis.
+
+\begin{definition}[Bandwidth Saturation]
+A conversational system is said to be bandwidth-saturated at time $t$ if
+\[
+B(t) < \varepsilon
+\]
+for some small threshold $\varepsilon > 0$, beyond which additional contributions cannot be meaningfully processed.
+\end{definition}
+
+Bandwidth saturation is not a subjective state but a functional one. When saturation is reached, further contributions reduce the capacity for shared meaning regardless of their content.
+
+\section{Relevance as Uncertainty Reduction}
+
+The notion of relevance is often treated informally in clinical and social settings. Here it is given an operational definition grounded in information theory.
+
+Let $\mathcal{T}$ denote the current topic space, understood as a probability distribution over semantic hypotheses shared by the group. Let $C$ denote a conversational contribution.
+
+\begin{definition}[Relevance Function]
+The relevance of a contribution $C$ to topic space $\mathcal{T}$ is defined as
+\[
+R(C,\mathcal{T}) = H(\mathcal{T}) - H(\mathcal{T} \mid C),
+\]
+where $H$ denotes Shannon entropy.
+\end{definition}
+
+A contribution is relevant if it reduces uncertainty regarding the shared topic. Relevance is therefore independent of emotional salience, narrative coherence, or rhetorical force.
+
+\begin{definition}[Relevance Threshold]
+A contribution $C$ is operationally relevant if
+\[
+R(C,\mathcal{T}) > \theta
+\]
+for a context-dependent threshold $\theta > 0$.
+\end{definition}
+
+Relevance failure occurs when contributions are high in volume but low in uncertainty reduction.
+
+\section{Conversational Dynamics and Invariance Under Engagement}
+
+Let $\Psi_t$ denote the conversational state at time $t$, incorporating topic distribution, participant attention allocation, and pragmatic commitments. Let $\mathcal{I}$ denote the set of admissible interventions available to other participants, including clarification, redirection, summarization, boundary-setting, and factual correction.
+
+Each intervention $i \in \mathcal{I}$ induces a transformation
+\[
+F_i : \Psi \mapsto \Psi'.
+\]
+
+\begin{definition}[Conversational Invariance]
+The conversational state $\Psi$ exhibits invariance under engagement if
+\[
+\forall i \in \mathcal{I}, \quad F_i(\Psi) \approx \Psi,
+\]
+where $\approx$ denotes equivalence up to the resolution of the conversational system.
+\end{definition}
+
+Invariance under engagement indicates that interventions fail to alter the trajectory of the interaction. This is the central diagnostic signal of Noiselord dynamics.
+
+\section{The Noiselord Detection Theorem}
+
+We are now in a position to state the principal diagnostic result.
+
+\begin{theorem}[Noiselord Detection]
+Let $\{\Psi_t\}$ be the conversational trajectory of a group interaction. A participant induces Noiselord dynamics if and only if the following conditions jointly obtain:
+\[
+\lim_{t \to \infty} B(t) = 0,
+\]
+\[
+\forall i \in \mathcal{I}, \quad F_i(\Psi_t) \approx \Psi_t,
+\]
+and
+\[
+R(C_t,\mathcal{T}_t) < \theta
+\]
+for almost all contributions $C_t$ produced by that participant.
+\end{theorem}
+
+\begin{proof}
+If bandwidth converges to zero, the system approaches saturation. If all admissible interventions leave the conversational state invariant, then engagement cannot restore bandwidth. If relevance remains below threshold, continued contribution fails to reduce uncertainty. Together these conditions imply that semantic activity continues while functional meaning does not increase. This is precisely the operational definition of Noiselord dynamics.
+
+Conversely, if any of the conditions fail, either bandwidth remains available, interventions alter trajectory, or contributions remain relevant, and the system does not exhibit Noiselord behavior.
+\end{proof}
+
+\begin{remark}
+The theorem makes no reference to intent, personality structure, or internal cognition. It is purely interactional.
+\end{remark}
+
+\section{Yarncrawling as Lawful Semantic Traversal}
+
+By contrast, Yarncrawling denotes semantic traversal that preserves relevance and permits termination.
+
+\begin{definition}[Yarncrawler Dynamics]
+A conversational process exhibits Yarncrawler dynamics if it is surjective over the admissible semantic space while admitting fixed points under engagement.
+\end{definition}
+
+In Yarncrawler mode, contributions explore without saturating bandwidth, interventions alter trajectory, and closure emerges naturally when uncertainty reduction reaches diminishing returns.
+
+\section{Bandwidth Conservation and Withdrawal}
+
+We now formalize the intuitive claim that persistent Noiselord dynamics produce disengagement.
+
+\begin{lemma}[Bandwidth Conservation]
+In any conversational system with finite initial bandwidth $B_0$, sustained Noiselord dynamics necessarily induce withdrawal or disengagement by non-dominant participants.
+\end{lemma}
+
+\begin{proof}
+Assume a participant imposes semantic load $c_j(t) \geq \delta > 0$ for all $t$ beyond some $t_0$, while relevance remains below threshold. Then
+\[
+\int_{t_0}^{T} c_j(t)\, dt \to B_0
+\]
+as $T$ increases. Consequently, residual bandwidth for other participants approaches zero. Rational agents faced with zero effective contribution capacity will minimize further cost by disengaging. Withdrawal follows as a consequence of conservation, not preference.
+\end{proof}
+
+\section{Clinical Interpretation}
+
+Clinically, Noiselord dynamics present not as confusion but as saturation. Patients or group members affected by such dynamics frequently report exhaustion, irritability, or dissociation rather than disagreement. The system fails not because meaning is absent, but because meaning cannot terminate.
+
+Termination, rather than interpretation, therefore becomes the therapeutic target.
+
+\section{Transition}
+
+The subsequent sections will extend this framework to operational measurement, clinical intervention protocols, differential diagnosis, and longitudinal stabilization of conversational worldhood.
+
+\section{Information-Theoretic Characterization of Conversational Saturation}
+
+The distinction between lawful semantic traversal and Noiselord dynamics may be sharpened through information-theoretic analysis. Let $C_t$ denote a conversational contribution produced at time $t$, and let $\mathcal{T}_t$ denote the shared topic distribution at that moment. The semantic volume of a contribution may be quantified by its entropy $H(C_t)$, whereas its semantic utility is measured by the mutual information $I(C_t;\mathcal{T}_t)$.
+
+In Yarncrawler dynamics, increases in semantic volume are accompanied by proportional increases in mutual information. Contributions expand the space of interpretation while simultaneously narrowing uncertainty regarding shared goals or topics. In Noiselord dynamics, by contrast, semantic volume grows independently of mutual information. Contributions are internally elaborate but externally untethered.
+
+Formally, Noiselord behavior is characterized by the inequality
+\[
+I(C_t;\mathcal{T}_t) \ll H(C_t)
+\]
+holding persistently across time. This inequality describes a system that expends semantic energy without performing semantic work. The conversational system heats without advancing.
+
+The thermodynamic analogy is not metaphorical. In the presence of finite social bandwidth, semantic entropy that does not reduce uncertainty acts as waste heat. The resulting increase in cognitive temperature manifests phenomenologically as fatigue, irritability, or withdrawal among participants.
+
+\section{Topical Drift and Semantic Distance}
+
+To capture the phenomenon commonly described as conversational hijacking, we formalize topical drift as a divergence between successive topic distributions. Let $\mathcal{T}_t$ and $\mathcal{T}_{t+1}$ denote the topic distributions before and after a contribution. Define the drift metric
+\[
+D_t = D_{\mathrm{KL}}(\mathcal{T}_{t+1} \,\|\, \mathcal{T}_t),
+\]
+where $D_{\mathrm{KL}}$ denotes Kullback--Leibler divergence.
+
+In healthy Yarncrawler traversal, drift occurs episodically and is followed by stabilization. In Noiselord dynamics, drift accumulates monotonically without convergence. The conversational trajectory fails to exhibit return to a basin of shared relevance.
+
+Importantly, drift alone is not pathological. Drift becomes clinically significant only when paired with invariance under engagement. When redirection fails to reduce $D_t$, the system enters a regime of semantic runaway.
+
+\section{Turn-Taking Entropy and Participation Collapse}
+
+Conversational participation may be modeled as a stochastic process over speaker identity. Let $p_i$ denote the proportion of conversational turns taken by participant $i$ over an interval $[0,T]$. Define the turn-taking entropy
+\[
+H_{\mathrm{turn}} = -\sum_{i=1}^n p_i \log p_i.
+\]
+
+High turn-taking entropy corresponds to distributed participation. Low entropy indicates monopolization. In isolation, low entropy may reflect contextual necessity or expertise. However, when low entropy coincides with declining relevance and bandwidth exhaustion, the pattern indicates Noiselord dynamics rather than leadership or guidance.
+
+As bandwidth decreases, non-dominant participants reduce contribution not due to lack of ideas, but due to anticipated futility. The entropy collapse is therefore a secondary effect of invariance, not its cause.
+
+\section{Clinical Vignette Structure and Analysis}
+
+Clinical presentation of Noiselord dynamics is frequently misattributed to interpersonal conflict or personality disorder. A process-based analysis yields a different interpretation.
+
+Consider an interaction in which one participant persistently redirects discussion toward autobiographical narratives regardless of the stated task. Measurements indicate rapid depletion of $B(t)$, repeated failure of relevance thresholds, and invariance under clarification or summarization attempts. Despite high verbal coherence, group objectives remain unmet.
+
+The critical diagnostic observation is that intervention does not alter trajectory. Clarifications are absorbed and reinterpreted as further invitations to elaborate. Redirections are acknowledged verbally yet fail to change topic distribution. Silence becomes structurally impossible, as pauses are immediately filled.
+
+In such cases, the presenting issue is not self-focus but termination failure. Treatment targets therefore address closure rather than content.
+
+\section{Relation to Classical Pragmatic Theories}
+
+Classical accounts of conversational cooperation, including Gricean maxims, identify norms such as relevance, quantity, and truthfulness as guiding principles. While these norms describe expected behavior, they do not specify enforcement mechanisms or termination conditions.
+
+Similarly, conversation analysis emphasizes sequential organization and repair, but assumes that repair mechanisms function when invoked. Noiselord dynamics represent a boundary case in which repair operations exist but are rendered ineffective by invariance.
+
+Relevance theory correctly identifies relevance as uncertainty reduction, yet presumes that relevance failures are locally detectable and corrigible. The present framework extends these accounts by identifying global failure modes in which relevance signals are systematically overridden by unpriced semantic expansion.
+
+\section{Distinction from Personality-Based Explanations}
+
+It is essential to distinguish process-level Noiselord dynamics from trait-based explanations such as narcissism or egocentrism. Trait models locate pathology within individuals and predict cross-context stability. Process models locate instability within interactional loops and predict context sensitivity.
+
+Empirically, Noiselord dynamics often intensify under conditions of evaluative threat, role ambiguity, or historical invalidation. The same individual may exhibit Yarncrawler behavior in one setting and Noiselord behavior in another, depending on termination affordances.
+
+This context dependence falsifies trait-level sufficiency and supports a systems-level account.
+
+\section{Clinical Target: Restoration of Termination Capacity}
+
+Intervention aims to restore the system’s ability to terminate semantic elaboration. This is accomplished not by suppressing expression, but by installing fixed points.
+
+Termination is signaled explicitly through closure acknowledgments, enforced pauses, and refusal of further elaboration once relevance thresholds are met. Crucially, refusal must be irreversible within the conversational episode. Reopening closed points reintroduces invariance failure.
+
+Over time, successful termination produces a reduction in semantic load per contribution, stabilization of topic distributions, and recovery of bandwidth.
+
+\section{Ethical and Contextual Constraints}
+
+Because Noiselord dynamics describe interactional processes, ethical application requires attention to power asymmetries and cultural norms. In contexts where silence has historically been enforced, high semantic output may serve a protective function. Intervention without addressing underlying safety may exacerbate harm.
+
+Furthermore, certain neuropsychiatric states impair termination capacity at a neurological level. In such cases, conversational control is neither diagnostic nor therapeutic and should not be attempted.
+
+The defining feature distinguishing Noiselord dynamics from such conditions is responsiveness to structural change. When termination capacity improves under explicit closure rules, the pattern is interactional rather than pathological.
+
+\section{Transition}
+
+The next section develops a formal clinical protocol expressed algorithmically, followed by longitudinal stabilization analysis, organizational and digital extensions, and formal appendices specifying assessment instruments and self-monitoring tools.
+
+\section{Algorithmic Structure of Bandwidth Restoration}
+
+The clinical problem posed by Noiselord dynamics is not excessive expression but the absence of termination sensitivity. Accordingly, intervention must be framed as a control problem rather than a corrective or interpretive one. The objective is to restore fixed-point detection within conversational dynamics while preserving lawful semantic traversal.
+
+Let $\Psi_t$ denote the conversational state at time $t$, comprising the joint topic distribution, participant engagement levels, and accumulated semantic load. Let $F_i$ denote the transformation induced by participant $i$'s contribution. Intervention introduces an auxiliary control operator $K$ acting on $\Psi_t$ such that the effective conversational update becomes
+\[
+\Psi_{t+1} = K \circ F_i(\Psi_t).
+\]
+
+The operator $K$ enforces two constraints: invariance detection and budget enforcement. Invariance detection evaluates whether
+\[
+F_i(\Psi_t) \approx \Psi_t
+\]
+up to an admissible tolerance determined by the current topic resolution. Budget enforcement evaluates whether the cumulative semantic load exceeds available social bandwidth.
+
+Termination occurs when both conditions are satisfied simultaneously. Crucially, termination does not require consensus regarding content; it requires only invariance under transformation. This distinction allows closure even in the presence of unresolved disagreement.
+
+\section{Temporal Dynamics and Irreversibility}
+
+Termination must be irreversible within the conversational episode to prevent re-entry into Noiselord drift. This irreversibility may be modeled by introducing a partial order on conversational states.
+
+Define a relation $\prec$ on states such that $\Psi_a \prec \Psi_b$ if $\Psi_b$ contains all semantic commitments of $\Psi_a$ plus additional unresolved elaboration. A termination event maps $\Psi_t$ to a maximal element $\Psi^\ast$ with respect to $\prec$ within the episode. Subsequent attempts to elaborate must be refused, as no admissible successor exists without violating the partial order.
+
+This ordering induces an arrow of conversational time analogous to thermodynamic irreversibility. Once closure occurs, semantic history becomes asymmetric, and the system acquires worldhood.
+
+\section{Bandwidth Exhaustion and Withdrawal as Rational Response}
+
+The withdrawal of participants from Noiselord-dominated interactions is often misinterpreted as disengagement or avoidance. Within the present framework, withdrawal is a rational response to resource depletion.
+
+Let $B(t)$ denote residual social bandwidth. For participant $j$, the expected utility of contributing at time $t$ may be expressed as
+\[
+U_j(t) = I(C_j;\mathcal{T}_t) - \lambda \, c_j(t),
+\]
+where $\lambda$ is a cost sensitivity parameter. As $B(t)$ approaches zero, marginal utility becomes negative regardless of contribution quality. Under these conditions, silence maximizes expected utility.
+
+Thus, withdrawal is not pathology but optimal adaptation to bandwidth exhaustion.
+
+\section{Extension to Group and Organizational Contexts}
+
+In organizational settings, Noiselord dynamics scale nonlinearly due to hierarchical asymmetries and role expectations. When authority figures exhibit invariance under engagement, termination attempts by subordinates are structurally suppressed, accelerating bandwidth depletion.
+
+Let $\alpha_i$ denote the effective influence weight of participant $i$. The semantic load imposed by a contribution scales as $\alpha_i c_i(t)$. High-weight contributors therefore exhaust bandwidth disproportionately even when speaking time is comparable.
+
+Organizational Noiselord dynamics frequently manifest as meetings that generate extensive discourse yet fail to converge on actionable outcomes. The diagnostic criterion is not verbosity but invariance under summarization, decision prompts, or deadline cues.
+
+\section{Digital Communication and Asynchronous Drift}
+
+Asynchronous media introduce delayed feedback loops that exacerbate Noiselord dynamics. In email threads, message volume may increase while mutual information declines, producing semantic saturation without resolution.
+
+Let $\Delta t$ denote response latency. As $\Delta t$ increases, the corrective effect of engagement diminishes, allowing invariance to persist unchecked. This explains the prevalence of runaway threads and escalating misinterpretation in digital contexts.
+
+Termination in asynchronous systems requires explicit closure signals that are socially binding, such as declared resolutions or archived threads. Without such signals, surjective interpretation continues indefinitely.
+
+\section{Developmental Acquisition of Termination Sensitivity}
+
+Termination sensitivity is not innate. Developmentally, it emerges through repeated exposure to social feedback that enforces closure. Let $T_s$ denote the internal termination threshold of an individual. Early environments that fail to provide consistent closure cues may delay or distort the calibration of $T_s$.
+
+Importantly, this does not imply deficit. Termination sensitivity remains plastic across the lifespan and responds reliably to structural intervention. This plasticity further supports a process-based rather than trait-based account.
+
+\section{Differential Diagnosis Revisited}
+
+The distinguishing feature of Noiselord dynamics is responsiveness to structural termination. In conditions such as mania or formal thought disorder, semantic invariance is not preserved, and interventions fail to produce stabilization even when closure is enforced.
+
+By contrast, in Noiselord dynamics, explicit termination rules rapidly reduce semantic load and restore participation balance. This differential response provides a falsifiable diagnostic criterion.
+
+\section{Longitudinal Stabilization and Prognosis}
+
+Successful intervention produces measurable changes over time. Turn-taking entropy increases, topical drift decreases, and social bandwidth recovers more rapidly following contributions. Participants report reduced fatigue and increased predictability of interactional outcomes.
+
+Failure of stabilization is indicated by persistent invariance under multiple termination strategies and contexts. In such cases, the framework predicts diminishing returns from conversational intervention alone.
+
+\section{Limitations}
+
+The present framework does not address semantic deception, strategic manipulation, or adversarial communication. It also does not prescribe normative content or values. Its scope is limited to termination dynamics in cooperative or quasi-cooperative settings.
+
+Additionally, measurement of semantic relevance and bandwidth requires approximation and may be sensitive to modeling choices. These limitations do not invalidate the framework but delimit its domain of applicability.
+
+\section{Conclusion of the Field Guide}
+
+Noiselord dynamics represent a failure of stopping, not a failure of meaning. Yarncrawler dynamics ensure reachability, but without termination they devolve into drift. By formalizing social bandwidth, relevance, invariance, and refusal, this field guide provides a unified mathematical and clinical account of semantic saturation across interpersonal, organizational, and digital domains.
+
+The central result may be stated concisely: meaningful interaction requires not only the capacity to elaborate, but the capacity to recognize when elaboration has become invariant.
+
+\appendix
+
+\section{Appendix A: Assessment Instrument Formalization}
+
+The Noiselord Interaction Assessment operationalizes the constructs defined herein by mapping observed interactional variables to quantitative indices. Scores exceeding empirically calibrated thresholds indicate elevated risk of bandwidth exhaustion under sustained interaction.
+
+\section{Appendix B: Self-Monitoring and Calibration}
+
+Self-monitoring protocols function by increasing sensitivity to invariance cues and cost accumulation. Over repeated use, individuals recalibrate internal termination thresholds, reducing reliance on external enforcement.
+
+\section{Future Research Directions}
+
+Future work should integrate neurophysiological measures of cognitive load, computational simulations of conversational dynamics, and longitudinal outcome studies across cultural contexts. Of particular interest is the relationship between termination sensitivity and executive control networks.
+
+\section{Final Remark}
+
+This field guide reframes conversational pathology as a control problem with explicit termination criteria. By shifting focus from who speaks to how stopping occurs, it opens a path toward scalable, ethical, and empirically grounded intervention.
+
+\begin{thebibliography}{99}
+
+\bibitem{austin1962}
+J. L. Austin.
+\newblock \emph{How to Do Things with Words}.
+\newblock Oxford University Press, 1962.
+
+\bibitem{barenholtz2023}
+E. Barenholtz, J. Levy, A. L. Smith, and J. T. Lupyan.
+\newblock Autoregressive cognition: A computational perspective on mental processes.
+\newblock \emph{Trends in Cognitive Sciences}, 27(6):567--582, 2023.
+
+\bibitem{bateson1972}
+G. Bateson.
+\newblock \emph{Steps to an Ecology of Mind}.
+\newblock University of Chicago Press, 1972.
+
+\bibitem{bruner1986}
+J. Bruner.
+\newblock \emph{Actual Minds, Possible Worlds}.
+\newblock Harvard University Press, 1986.
+
+\bibitem{clark1996}
+H. H. Clark.
+\newblock \emph{Using Language}.
+\newblock Cambridge University Press, 1996.
+
+\bibitem{coase1960}
+R. H. Coase.
+\newblock The problem of social cost.
+\newblock \emph{Journal of Law and Economics}, 3:1--44, 1960.
+
+\bibitem{cox2016}
+A. Cox.
+\newblock \emph{Music and Embodied Cognition: Listening, Moving, Feeling, and Thinking}.
+\newblock Indiana University Press, 2016.
+
+\bibitem{cover2006}
+T. M. Cover and J. A. Thomas.
+\newblock \emph{Elements of Information Theory}.
+\newblock Wiley, 2nd edition, 2006.
+
+\bibitem{friston2010}
+K. Friston.
+\newblock The free-energy principle: A unified brain theory?
+\newblock \emph{Nature Reviews Neuroscience}, 11(2):127--138, 2010.
+
+\bibitem{friston2019}
+K. Friston, T. Parr, and B. de Vries.
+\newblock The graphical brain: Belief propagation and active inference.
+\newblock \emph{Network Neuroscience}, 1(4):381--414, 2019.
+
+\bibitem{grice1975}
+H. P. Grice.
+\newblock Logic and conversation.
+\newblock In P. Cole and J. Morgan, editors, \emph{Syntax and Semantics, Vol. 3}, pages 41--58. Academic Press, 1975.
+
+\bibitem{habermas1984}
+J. Habermas.
+\newblock \emph{The Theory of Communicative Action, Vol. 1}.
+\newblock Beacon Press, 1984.
+
+\bibitem{jaynes1957}
+E. T. Jaynes.
+\newblock Information theory and statistical mechanics.
+\newblock \emph{Physical Review}, 106(4):620--630, 1957.
+
+\bibitem{kahneman1973}
+D. Kahneman.
+\newblock \emph{Attention and Effort}.
+\newblock Prentice-Hall, 1973.
+
+\bibitem{landauer1961}
+R. Landauer.
+\newblock Irreversibility and heat generation in the computing process.
+\newblock \emph{IBM Journal of Research and Development}, 5(3):183--191, 1961.
+
+\bibitem{luhmann1995}
+N. Luhmann.
+\newblock \emph{Social Systems}.
+\newblock Stanford University Press, 1995.
+
+\bibitem{misner1973}
+C. W. Misner, K. S. Thorne, and J. A. Wheeler.
+\newblock \emph{Gravitation}.
+\newblock W. H. Freeman, 1973.
+
+\bibitem{newell1972}
+A. Newell and H. A. Simon.
+\newblock \emph{Human Problem Solving}.
+\newblock Prentice-Hall, 1972.
+
+\bibitem{polanyi1966}
+M. Polanyi.
+\newblock \emph{The Tacit Dimension}.
+\newblock Doubleday, 1966.
+
+\bibitem{sacks1974}
+H. Sacks, E. A. Schegloff, and G. Jefferson.
+\newblock A simplest systematics for the organization of turn-taking for conversation.
+\newblock \emph{Language}, 50(4):696--735, 1974.
+
+\bibitem{sperber1986}
+D. Sperber and D. Wilson.
+\newblock \emph{Relevance: Communication and Cognition}.
+\newblock Harvard University Press, 1986.
+
+\bibitem{sweller1988}
+J. Sweller.
+\newblock Cognitive load during problem solving: Effects on learning.
+\newblock \emph{Cognitive Science}, 12(2):257--285, 1988.
+
+\bibitem{turing1936}
+A. M. Turing.
+\newblock On computable numbers, with an application to the Entscheidungsproblem.
+\newblock \emph{Proceedings of the London Mathematical Society}, 42(2):230--265, 1936.
+
+\bibitem{vonfoerster1973}
+H. von Foerster.
+\newblock On constructing a reality.
+\newblock In F. E. Preiser, editor, \emph{Environmental Design Research}, pages 35--46. Dowden, Hutchinson \& Ross, 1973.
+
+\bibitem{wittgenstein1953}
+L. Wittgenstein.
+\newblock \emph{Philosophical Investigations}.
+\newblock Blackwell, 1953.
+
+\bibitem{wilson2004}
+M. Wilson.
+\newblock Six views of embodied cognition.
+\newblock \emph{Psychonomic Bulletin \& Review}, 9(4):625--636, 2004.
+
+\bibitem{zipf1949}
+G. K. Zipf.
+\newblock \emph{Human Behavior and the Principle of Least Effort}.
+\newblock Addison-Wesley, 1949.
+
+\end{thebibliography}
+
+\end{document}

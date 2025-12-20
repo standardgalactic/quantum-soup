@@ -1,0 +1,10 @@
+*.aux
+*.log
+*.out
+
+*.json
+*.tsv
+*.srt
+*.vtt
+
+

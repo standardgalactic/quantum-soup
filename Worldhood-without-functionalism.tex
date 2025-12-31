@@ -1,10 +1,14 @@
 \documentclass[11pt]{article}
 
 % --------------------------------------------------
-% Encoding and Fonts
+% Fonts and Unicode (modern)
 % --------------------------------------------------
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
+\RequirePackage{fontspec}
+
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{Latin Modern Roman}
+
 
 % --------------------------------------------------
 % Page Layout
@@ -24,6 +28,8 @@
 \newtheorem{proposition}{Proposition}
 \theoremstyle{remark}
 \newtheorem{remark}{Remark}
+\newtheorem{corollary}[theorem]{Corollary}
+
 
 % --------------------------------------------------
 % Typography
@@ -33,7 +39,7 @@
 \setstretch{1.15}
 
 % --------------------------------------------------
-% Quotation and Links
+% Quotations and Links
 % --------------------------------------------------
 \usepackage{csquotes}
 \usepackage{hyperref}
@@ -43,7 +49,9 @@
 % --------------------------------------------------
 \title{Worldhood Without Functionalism:\\
 Intelligence as Irreversible Constraint}
+
 \author{Flyxion}
+
 \date{\today}
 
 \begin{document}
